@@ -1,0 +1,5 @@
+#!/bin/sh -e
+
+SBCL="/usr/local/bin/sbcl --script"
+
+$SBCL build.lisp
