@@ -1,5 +1,11 @@
 #!/bin/sh -e
 
-SBCL="/usr/local/bin/sbcl --script"
+if [ -x /usr/local/bin/sbcl ]; then
+    SBCL=/usr/local/bin/sbcl
+else
+    SBCL=/usr/bin/sbcl
+fi
+
+SBCL="$SBCL --script"
 
 $SBCL build.lisp

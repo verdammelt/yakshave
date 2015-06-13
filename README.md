@@ -7,7 +7,7 @@ SBCL gives me threads & sockets.
 
 I'll need to write:
 
-* testing framework
+* DONE testing framework
 * HTTP parsing
 * web server
 * Lisp->HTML compiler?
@@ -20,3 +20,5 @@ Todo:
 * Need an actual feature to implement
 ** blog?
 ** weight tracking?
+* Testing Framework
+** do something with packages?
