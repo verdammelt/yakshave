@@ -1,5 +1,8 @@
 Yak Shaving crossed with Not Invented Here Syndrome.
 
+[![Build Status](https://travis-ci.org/verdammelt/yakshave.svg?branch=master)](https://travis-ci.org/verdammelt/yakshave)
+
+
 Full web app in Common Lisp only. Only given is SBCL. Everything else
 written here. 
 
