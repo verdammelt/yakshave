@@ -25,3 +25,8 @@ Todo:
 ** weight tracking?
 * Testing Framework
 ** do something with packages?
+
+Random thoughts:
+* build creates config file that has verion & git hash in it (for logging & display)
+* version also returned in web server headers
+* start by serving static data like robots.txt & humans.txt
