@@ -7,7 +7,7 @@
   (test))
 
 (defun test ()
-  (dolist (file '("test-test"))
-    (load file)))
+  (dolist (file (directory "*-test.lisp"))
+    (load file :verbose t)))
 
-(time (progn (default) (format t "~%~%OK~%")))
+(time (progn (default) (format t "~%~%OK~%~%")))
