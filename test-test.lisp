@@ -47,11 +47,24 @@
 
 (assert-no-failure (= (length (test::test-list)) 1))
 
+(deftest a-multi-assert-failing-test
+    "This test has a second assert which fails"
+  (assert (= 2 (+ 1 1)))
+  (assert (= 5 (+ 2 2))))
+
+(assert-no-failure (= (length (test::test-list)) 2))
+
+(deftest a-multi-assert-without-docstring-failing-test
+  (assert (= 2 (+ 1 1)))
+  (assert (= 5 (+ 2 2))))
+
+(assert-no-failure (= (length (test::test-list)) 3))
+
 (deftest a-simple-passing-test
     "This is a very simple test which passes"
   (assert (= 4 (+ 2 2))))
 
-(assert-no-failure (= (length (test::test-list)) 2))
+(assert-no-failure (= (length (test::test-list)) 4))
 
 (format t "~A...PASSED~&" 'test:deftest)
 
@@ -59,8 +72,10 @@
   (run-all-tests)
   (let ((output (get-output-stream-string *standard-output*)))
     (assert-no-failure (search "A-SIMPLE-FAILING-TEST...FAILED." output))
+    (assert-no-failure (search "A-MULTI-ASSERT-FAILING-TEST...FAILED." output))
+    (assert-no-failure (search "A-MULTI-ASSERT-WITHOUT-DOCSTRING-FAILING-TEST...FAILED." output))
     (assert-no-failure (search "PASSED: 1" output))
-    (assert-no-failure (search "FAILED: 1" output))))
+    (assert-no-failure (search "FAILED: 3" output))))
 (format t "~A...PASSED~&" 'test:run-all-tests)
 
 (load "test")
